@@ -334,7 +334,7 @@ POST_INSTALL_KERNEL_DEBS
 
 	# install board support packages
 	if [[ "${REPOSITORY_INSTALL}" != *bsp* ]]; then
-		install_deb_chroot "${DEB_STORAGE}/$RELEASE/${BSP_CLI_PACKAGE_FULLNAME}.deb" | tee "${DEST}"/${LOG_SUBPATH}/install.log 2>&1
+		install_deb_chroot "${DEB_STORAGE}/$RELEASE/${BSP_CLI_PACKAGE_FULLNAME}.deb"
 	else
 		install_deb_chroot "${DEB_ORANGEPI}/$RELEASE/${CHOSEN_ROOTFS}_${BSP_CLI_PACKAGE_FULLNAME}.deb" "orangepi"
 	fi
@@ -389,6 +389,15 @@ POST_INSTALL_KERNEL_DEBS
 			if [[ $BUILD_MINIMAL != yes ]]; then
 				install_deb_chroot "orangepi-zsh" "remote"
 			fi
+		fi
+	fi
+
+	# install plymouth-theme-orangepi
+	if [[ $PLYMOUTH == yes ]]; then
+		if [[ "${REPOSITORY_INSTALL}" != *plymouth-theme-orangepi* ]]; then
+			install_deb_chroot "${DEB_STORAGE}/orangepi-plymouth-theme_${REVISION}_all.deb"
+		else
+			install_deb_chroot "orangepi-plymouth-theme" "remote"
 		fi
 	fi
 
