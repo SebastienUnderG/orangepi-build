@@ -112,7 +112,7 @@ RUN apt-get update \
        zip \
        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
-RUN locale-gen en_US.UTF-8
+RUN locale-gen fr_FR.UTF-8
 
 # Static port for NFSv3 server used for USB FEL boot
 RUN sed -i 's/\(^STATDOPTS=\).*/\1"--port 32765 --outgoing-port 32766"/' /etc/default/nfs-common \
