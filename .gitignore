@@ -19,7 +19,6 @@ kernel
 output
 u-boot
 toolchains
-userpatches
 
 mkimage.sh
 
@@ -27,6 +26,7 @@ mkimage.sh
 !external/patch/kernel
 !external/config/kernel
 
+external/cache/ccache
 external/cache/.gpg
 external/cache/hash
 external/cache/rootfs
