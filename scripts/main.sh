@@ -59,7 +59,7 @@ backtitle="Orange Pi building script, http://www.orangepi.org"
 titlestr="Choose an option"
 
 # Warnings mitigation
-[[ -z $LANGUAGE ]] && export LANGUAGE="en_US:en"            # set to english if not set
+[[ -z $LANGUAGE ]] && export LANGUAGE="fr_FR:fr"            # set to french if not set
 [[ -z $CONSOLE_CHAR ]] && export CONSOLE_CHAR="UTF-8"       # set console to UTF-8 if not set
 
 # Libraries include
